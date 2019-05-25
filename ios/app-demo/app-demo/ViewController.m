@@ -20,4 +20,7 @@
 }
 
 
+- (IBAction)setLabel:(id)sender {
+    [mlabel setText:@"update label"];
+}
 @end

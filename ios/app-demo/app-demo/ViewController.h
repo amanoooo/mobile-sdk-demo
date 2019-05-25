@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    
+    IBOutlet UILabel *mlabel;
+}
+- (IBAction)setLabel:(id)sender;
 
 @end
 
