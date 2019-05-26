@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <sdk_demo/sdk_demo.h>
 
 @interface ViewController ()
 
@@ -17,10 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+     NSLog (@"viewDidLoad");
+    Test *test = [[Test alloc] init];
+    [test printTestLog];
+
 }
 
 
 - (IBAction)setLabel:(id)sender {
     [mlabel setText:@"update label"];
+    [Test printStaticLog];
 }
 @end
