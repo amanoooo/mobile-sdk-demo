@@ -1,1 +1,13 @@
 .DS_Store
+
+#You can safely delete the xcuserdata directories. It basically contains personal settings #like breakpoints, user interface layout, open files, automatic snapshots configuration #and so on
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.xcuserstate
+.DS_Store
+Source/Application.h
+#*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata
