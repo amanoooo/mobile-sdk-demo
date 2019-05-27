@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+// example 1
 @interface SampleClass:NSObject
 /* method declaration */
 - (int)max:(int)num1 andNum2:(int)num2;
@@ -34,6 +34,52 @@
 @end
 
 
+
+// example 2
+@protocol PrintProtocolDelegate
+- (void)processCompleted;
+
+@end
+
+@interface PrintClass :NSObject {
+    id delegate;
+}
+
+- (void) printDetails;
+- (void) setDelegate:(id)newDelegate;
+@end
+
+@implementation PrintClass
+- (void)printDetails {
+    NSLog(@"Printing Details");
+    [delegate processCompleted];
+}
+
+- (void) setDelegate:(id)newDelegate {
+    delegate = newDelegate;
+}
+
+@end
+
+@interface SampleClass2:NSObject<PrintProtocolDelegate>
+- (void)startAction;
+
+@end
+
+@implementation SampleClass2
+- (void)startAction {
+    PrintClass *printClass = [[PrintClass alloc]init];
+    [printClass setDelegate:self];
+    [printClass printDetails];
+}
+
+-(void)processCompleted {
+    NSLog(@"Printing Process Completed");
+}
+
+@end
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
@@ -52,6 +98,10 @@ int main(int argc, const char * argv[]) {
     ret = [sampleClass max:a andNum2:b];
     
     NSLog(@"Max value is : %d\n", ret );
+    
+    
+    SampleClass2 *sampleClass2 = [[SampleClass2 alloc]init];
+    [sampleClass2 startAction];
 
     
     return 0;
