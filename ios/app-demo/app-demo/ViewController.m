@@ -26,7 +26,7 @@
 }
 
 
-- (IBAction)setLabel:(id)sender {
+- (IBAction)getToken:(id)sender {
     [mlabel setText:@"update label"];
     [Test printStaticLog];
 }

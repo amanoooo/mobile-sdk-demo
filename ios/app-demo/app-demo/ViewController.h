@@ -13,7 +13,7 @@
     
     IBOutlet UILabel *mlabel;
 }
-- (IBAction)setLabel:(id)sender;
+- (IBAction)getToken:(id)sender;
 
 @end
 

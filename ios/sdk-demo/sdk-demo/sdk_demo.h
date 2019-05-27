@@ -17,4 +17,4 @@ FOUNDATION_EXPORT const unsigned char sdk_demoVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <sdk_demo/PublicHeader.h>
 
 
-#import <sdk_demo/Test.h>
+#import <sdk_demo/SDK.h>
