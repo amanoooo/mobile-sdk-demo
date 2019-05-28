@@ -1,14 +1,14 @@
 //
-//  Test.m
+//  AuthView.m
 //  sdk-demo
 //
-//  Created by hikaru amano on 2019/5/26.
+//  Created by hikaru amano on 2019/5/27.
 //  Copyright © 2019 hikaru amano. All rights reserved.
 //
 
-#import "Test.h"
+#import "AuthView.h"
 
-@implementation Test
+@implementation AuthView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -17,14 +17,5 @@
     // Drawing code
 }
 */
-- (void) printTestLog {
-    NSLog(@"log from sdk---- \n");
-}
-
-+ (void) printStaticLog {
-    NSLog(@"static log from sdk \n");
-}
-
-
 
 @end

@@ -22,16 +22,20 @@
 
 /* Begin PBXBuildFile section */
 		EE42153A22996CB9008ED53D /* sdk_demo.h in Headers */ = {isa = PBXBuildFile; fileRef = EE42153822996CB9008ED53D /* sdk_demo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE42158B229A6355008ED53D /* Test.h in Headers */ = {isa = PBXBuildFile; fileRef = EE421589229A6355008ED53D /* Test.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE42158C229A6355008ED53D /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = EE42158A229A6355008ED53D /* Test.m */; };
+		EE6D8A0E229BECD600E5F70F /* AuthView.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6D8A0C229BECD600E5F70F /* AuthView.h */; };
+		EE6D8A0F229BECD600E5F70F /* AuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D8A0D229BECD600E5F70F /* AuthView.m */; };
+		EE6D8A12229BF70C00E5F70F /* SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6D8A10229BF70C00E5F70F /* SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE6D8A13229BF70C00E5F70F /* SDK.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D8A11229BF70C00E5F70F /* SDK.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE42153522996CB9008ED53D /* sdk_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sdk_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE42153822996CB9008ED53D /* sdk_demo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sdk_demo.h; sourceTree = "<group>"; };
 		EE42153922996CB9008ED53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE421589229A6355008ED53D /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		EE42158A229A6355008ED53D /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		EE6D8A0C229BECD600E5F70F /* AuthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthView.h; sourceTree = "<group>"; };
+		EE6D8A0D229BECD600E5F70F /* AuthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthView.m; sourceTree = "<group>"; };
+		EE6D8A10229BF70C00E5F70F /* SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDK.h; sourceTree = "<group>"; };
+		EE6D8A11229BF70C00E5F70F /* SDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDK.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				EE42153822996CB9008ED53D /* sdk_demo.h */,
-				EE421589229A6355008ED53D /* Test.h */,
-				EE42158A229A6355008ED53D /* Test.m */,
+				EE6D8A10229BF70C00E5F70F /* SDK.h */,
+				EE6D8A11229BF70C00E5F70F /* SDK.m */,
+				EE6D8A0C229BECD600E5F70F /* AuthView.h */,
+				EE6D8A0D229BECD600E5F70F /* AuthView.m */,
 				EE42153922996CB9008ED53D /* Info.plist */,
 			);
 			path = "sdk-demo";
@@ -79,7 +85,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE42158B229A6355008ED53D /* Test.h in Headers */,
+				EE6D8A0E229BECD600E5F70F /* AuthView.h in Headers */,
+				EE6D8A12229BF70C00E5F70F /* SDK.h in Headers */,
 				EE42153A22996CB9008ED53D /* sdk_demo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,7 +182,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE42158C229A6355008ED53D /* Test.m in Sources */,
+				EE6D8A13229BF70C00E5F70F /* SDK.m in Sources */,
+				EE6D8A0F229BECD600E5F70F /* AuthView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

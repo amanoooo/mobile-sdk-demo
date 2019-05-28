@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-{
-    
-    IBOutlet UILabel *mlabel;
-}
-- (IBAction)setLabel:(id)sender;
+
+@property(nonatomic) IBOutlet UITextField *pass;
+@property(nonatomic) IBOutlet UITextField *name;
+@property(nonatomic) IBOutlet UILabel *mlabel;
+
+
+- (IBAction)getToken:(id)sender;
 
 @end
 

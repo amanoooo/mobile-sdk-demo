@@ -13,21 +13,23 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
      NSLog (@"viewDidLoad");
-    Test *test = [[Test alloc] init];
-    [test printTestLog];
+  
 
 }
 
 
-- (IBAction)setLabel:(id)sender {
-    [mlabel setText:@"update label"];
-    [Test printStaticLog];
+- (IBAction)getToken:(id)sender {
+    SDK *sdk = [SDK new];
+    [sdk getTokenWithName:(_name.text) andPass:(_pass.text)];
+
 }
 @end
