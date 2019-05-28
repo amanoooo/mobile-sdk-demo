@@ -13,7 +13,9 @@
 
 @property(nonatomic) IBOutlet UITextField *pass;
 @property(nonatomic) IBOutlet UITextField *name;
-@property(nonatomic) IBOutlet UILabel *mlabel;
+@property (strong, nonatomic) IBOutlet UILabel *tokenLabel;
+
+
 
 
 - (IBAction)getToken:(id)sender;

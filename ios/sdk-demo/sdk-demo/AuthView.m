@@ -153,7 +153,16 @@
 -(void)cancel:(UIButton *)sender {
     NSLog(@"on cancel click");
     [self->_delegate tokenOnResult:nil name: nil];
-    [self removeFromSuperview];
+    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveLinear animations:^{
+        CGRect rcc = self.alertView.frame;
+        rcc.origin.y = self.frame.size.height;
+        self.alertView.frame = rcc;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self->_delegate tokenOnResult:nil name: nil];
+            [self removeFromSuperview];
+        }
+    }];
 }
 -(void)confirm:(UIButton *)sender {
     NSLog(@"on confirm click");
@@ -161,7 +170,15 @@
         NSLog(@"response i: %@", res);
         [self->_delegate tokenOnResult:[res valueForKeyPath:@"date"] name: [res valueForKeyPath:@"name"]];
     }];
-    [self removeFromSuperview];
+    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveLinear animations:^{
+        CGRect rcc = self.alertView.frame;
+        rcc.origin.y = self.frame.size.height;
+        self.alertView.frame = rcc;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self removeFromSuperview];
+        }
+    }];
 }
 
 @end

@@ -62,7 +62,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUj-0T-OF6">
-                                <rect key="frame" x="227" y="314" width="5" height="21"/>
+                                <rect key="frame" x="232" y="314" width="145" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -82,6 +82,7 @@
                     <connections>
                         <outlet property="name" destination="z3j-DO-qDu" id="wMW-k8-YDE"/>
                         <outlet property="pass" destination="Rfr-vJ-JXL" id="jid-0g-TOG"/>
+                        <outlet property="tokenLabel" destination="CUj-0T-OF6" id="Fgt-tw-VYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
