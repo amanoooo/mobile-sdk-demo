@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sdk_demo/sdk_demo.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<SDKDelegate>
 
 @property(nonatomic) IBOutlet UITextField *pass;
 @property(nonatomic) IBOutlet UITextField *name;

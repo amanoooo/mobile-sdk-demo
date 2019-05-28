@@ -10,11 +10,10 @@
 #import "AuthView.h"
 
 @implementation SDK
-- (int)getTokenWithName:(NSString *)name andPass: (NSString *) pass {
+- (void)getTokenWithName:(NSString *)name andPass: (NSString *) pass andDelegate:(nonnull id<SDKDelegate>)delegate {
     NSLog(@"name is %@ pass is %@", name, pass);
-    AuthView * authView = [[AuthView alloc] initWithName:name andPass:pass];
+    AuthView * authView = [[AuthView alloc]initWithName:name andPass:pass andDelegate:delegate];
     [authView showAuth];
-    return 1;
 }
 
 @end

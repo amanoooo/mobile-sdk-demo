@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *pass;
 @property(nonatomic) UIView *alertView;
 @property(nonatomic) UIView *mainView;
+@property(nonatomic) id<SDKDelegate> delegate;
 
 
-- (instancetype) initWithName:(NSString *) name andPass:(NSString *) pass;
+- (instancetype) initWithName:(NSString *) name andPass:(NSString *) pass andDelegate:(id<SDKDelegate>) delegate;
 
 - (void)showAuth;
 

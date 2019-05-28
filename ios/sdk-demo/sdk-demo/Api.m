@@ -78,7 +78,7 @@
                 callBack(resJson);
             }
             
-            NSLog(@"%@ %@", str, [NSThread currentThread]);
+//            NSLog(@"%@ %@", str, [NSThread currentThread]);
         }
     }];
 }

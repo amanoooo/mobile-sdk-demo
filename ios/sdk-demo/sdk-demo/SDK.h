@@ -8,10 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol SDKDelegate <NSObject>
+@required
+
+-(void)tokenOnResult:(NSString* __nullable)token name: (NSString* __nullable) name;
+
+@end
+
 @interface SDK : NSObject
-- (int)getTokenWithName:(NSString *)name andPass: (NSString *) pass;
+- (void)getTokenWithName:(NSString *)name andPass: (NSString *) pass andDelegate:(id<SDKDelegate>) delegate;
 
 @end
 

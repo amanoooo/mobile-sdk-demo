@@ -25,12 +25,13 @@
 }
 */
 
-- (instancetype)initWithName:(NSString *)name andPass:(NSString *)pass{
+- (instancetype)initWithName:(NSString *)name andPass:(NSString *)pass andDelegate:(id<SDKDelegate>) delegate {
     self = [super init];
     if (self) {
         _name = name;
         _pass = pass;
         _alertView = [[UIView alloc] init];
+        self.delegate = delegate;
 
         self.frame = [UIScreen mainScreen].bounds;
         self.backgroundColor =  [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];
@@ -46,7 +47,7 @@
 
 #pragma mark - 展示弹窗
 - (void)showAuth{
-    NSLog(@"show auth self name is %@, pass is %@", _name, _pass);
+    NSLog(@"AuthView get name is %@, pass is %@", _name, _pass);
     
     UIWindow *rootWindow = [UIApplication sharedApplication].keyWindow;
     [rootWindow addSubview:self];
@@ -151,15 +152,16 @@
 
 -(void)cancel:(UIButton *)sender {
     NSLog(@"on cancel click");
+    [self->_delegate tokenOnResult:nil name: nil];
+    [self removeFromSuperview];
 }
 -(void)confirm:(UIButton *)sender {
     NSLog(@"on confirm click");
     [Api fetchDate:_name andPass: _pass andCb: ^(NSDictionary *res ){
         NSLog(@"response i: %@", res);
+        [self->_delegate tokenOnResult:[res valueForKeyPath:@"date"] name: [res valueForKeyPath:@"name"]];
     }];
+    [self removeFromSuperview];
 }
-
-
-
 
 @end

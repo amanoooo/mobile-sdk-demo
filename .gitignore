@@ -1,4 +1,4 @@
-.DS_Store
+*/.DS_Store
 
 #You can safely delete the xcuserdata directories. It basically contains personal settings #like breakpoints, user interface layout, open files, automatic snapshots configuration #and so on
 xcuserdata
