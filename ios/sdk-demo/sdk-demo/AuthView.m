@@ -8,6 +8,7 @@
 
 #import "AuthView.h"
 #import "ColorUtil.h"
+#import "Api.h"
 
 #define ALERT_HEIGHT 358
 
@@ -148,12 +149,14 @@
 }
 
 
-
 -(void)cancel:(UIButton *)sender {
     NSLog(@"on cancel click");
 }
 -(void)confirm:(UIButton *)sender {
     NSLog(@"on confirm click");
+    [Api fetchDate:_name andPass: _pass andCb: ^(NSDictionary *res ){
+        NSLog(@"response i: %@", res);
+    }];
 }
 
 
