@@ -26,6 +26,8 @@
 		EE6D8A0F229BECD600E5F70F /* AuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D8A0D229BECD600E5F70F /* AuthView.m */; };
 		EE6D8A12229BF70C00E5F70F /* SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6D8A10229BF70C00E5F70F /* SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE6D8A13229BF70C00E5F70F /* SDK.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D8A11229BF70C00E5F70F /* SDK.m */; };
+		EEB6E694229D14E700627D6C /* ColorUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = EEB6E692229D14E700627D6C /* ColorUtil.h */; };
+		EEB6E695229D14E700627D6C /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB6E693229D14E700627D6C /* ColorUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		EE6D8A0D229BECD600E5F70F /* AuthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthView.m; sourceTree = "<group>"; };
 		EE6D8A10229BF70C00E5F70F /* SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDK.h; sourceTree = "<group>"; };
 		EE6D8A11229BF70C00E5F70F /* SDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDK.m; sourceTree = "<group>"; };
+		EEB6E692229D14E700627D6C /* ColorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
+		EEB6E693229D14E700627D6C /* ColorUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				EE6D8A0C229BECD600E5F70F /* AuthView.h */,
 				EE6D8A0D229BECD600E5F70F /* AuthView.m */,
 				EE42153922996CB9008ED53D /* Info.plist */,
+				EEB6E692229D14E700627D6C /* ColorUtil.h */,
+				EEB6E693229D14E700627D6C /* ColorUtil.m */,
 			);
 			path = "sdk-demo";
 			sourceTree = "<group>";
@@ -87,6 +93,7 @@
 			files = (
 				EE6D8A0E229BECD600E5F70F /* AuthView.h in Headers */,
 				EE6D8A12229BF70C00E5F70F /* SDK.h in Headers */,
+				EEB6E694229D14E700627D6C /* ColorUtil.h in Headers */,
 				EE42153A22996CB9008ED53D /* sdk_demo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +191,7 @@
 			files = (
 				EE6D8A13229BF70C00E5F70F /* SDK.m in Sources */,
 				EE6D8A0F229BECD600E5F70F /* AuthView.m in Sources */,
+				EEB6E695229D14E700627D6C /* ColorUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,11 +7,11 @@
 //
 
 #import "AuthView.h"
-
+#import "ColorUtil.h"
 
 #define ALERT_HEIGHT 358
 
-#define MARGIN_CONTENT 20
+#define MARGIN 20
 
 
 @implementation AuthView
@@ -71,35 +71,40 @@
         _mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.alertView.frame), CGRectGetHeight(self.alertView.frame) - 15)];
         
         // title
-        UILabel *titleLabel =[[UILabel alloc] initWithFrame:CGRectMake(MARGIN_CONTENT, MARGIN_CONTENT, 200, 22)];
+        UILabel *titleLabel =[[UILabel alloc] initWithFrame:CGRectMake(MARGIN, MARGIN, 200, 22)];
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"SDK Title"attributes: @{NSFontAttributeName: [UIFont fontWithName:@"PingFangSC-Semibold" size: 20],NSForegroundColorAttributeName: [UIColor colorWithRed:66/255.0 green:73/255.0 blue:96/255.0 alpha:1.0]}];
         titleLabel.attributedText = string;
         titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.alpha = 1.0;
         
-        UIView *line1 = [self rowLineWithX:MARGIN_CONTENT andY: 2 * MARGIN_CONTENT + 22 AndWidth: self.frame.size.width - 2 * MARGIN_CONTENT ];
+        UIView *line1 = [self rowLineWithX:MARGIN andY: 2 * MARGIN + 22 AndWidth: self.frame.size.width - 2 * MARGIN ];
         
         // name
-        UILabel *nameLable =[[UILabel alloc] initWithFrame:CGRectMake(MARGIN_CONTENT, 4 * MARGIN_CONTENT, 200, 20)];
+        UILabel *nameLable =[[UILabel alloc] initWithFrame:CGRectMake(MARGIN, 4 * MARGIN, 200, 20)];
         [nameLable setText: [NSString stringWithFormat:@"Received name: %@", _name]];
         [nameLable setFont:[UIFont fontWithName:@"PingFangSC-Semibold" size:18]];
         nameLable.textAlignment = NSTextAlignmentLeft;
         
         // pass
-        UILabel *passLable =[[UILabel alloc] initWithFrame:CGRectMake(MARGIN_CONTENT, 6 * MARGIN_CONTENT, 200, 20)];
+        UILabel *passLable =[[UILabel alloc] initWithFrame:CGRectMake(MARGIN, 6 * MARGIN, 200, 20)];
         [passLable setText: [NSString stringWithFormat:@"Received pass: %@", _pass]];
         [passLable setFont:[UIFont fontWithName:@"PingFangSC-Semibold" size:18]];
         passLable.textAlignment = NSTextAlignmentLeft;
+        
         
         [_mainView addSubview: titleLabel];
         [_mainView addSubview: nameLable];
         [_mainView addSubview: passLable];
         [_mainView addSubview: line1];
+        [_mainView addSubview: self.buttonView];
+        
+        
+        
     }
     return _mainView;
 }
 
--(UIView*)rowLineWithX:(CGFloat) x andY :(CGFloat)y AndWidth :(CGFloat) width {
+- (UIView*) rowLineWithX:(CGFloat) x andY :(CGFloat)y AndWidth :(CGFloat) width {
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(x, y, width, 1);
     
@@ -107,7 +112,49 @@
     return view;
 }
 
+- (UIView*) buttonView {
+    // 底部两个按钮
+    float btnH = 40;
+    float btnW = (self.frame.size.width - 20 - 2 * MARGIN) / 2.0;
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, ALERT_HEIGHT-MARGIN-btnH, self.frame.size.width, btnH)];
+    [view addSubview: [self getCustomBtn:true title:@"取消" action:@selector(cancel:) target:self frame:CGRectMake(MARGIN, 0, btnW, btnH)]];
+    [view addSubview: [self getCustomBtn:false title:@"确认" action:@selector(confirm:) target:self frame:CGRectMake(self.frame.size.width - MARGIN - btnW, 0, btnW, btnH)]];
+    return view;
+}
 
+#pragma mark - 自定义按钮白色和绿色的按钮
+-(UIButton*)getCustomBtn:(BOOL)isWhite title:(NSString*)title action:(SEL)action target:(id)target frame:(CGRect)frame {
+    int titeColor = 0x424960;
+    int bgColor = 0xFFFFFF;
+    if (!isWhite) {
+        titeColor = 0xFFFFFF;
+        bgColor = 0x424960;
+    }
+    UIButton *custBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    custBtn.backgroundColor = COLOR_HEX(bgColor, 1.0f);
+    
+//    [custBtn setContentMode:UIViewContentModeScaleToFill];
+    [custBtn.layer setShadowOffset:CGSizeMake(2, 5)];
+    [custBtn.layer setShadowColor:[[UIColor grayColor] CGColor]];
+    [custBtn.layer setShadowOpacity:0.5];
+    custBtn.frame = frame;
+    custBtn.layer.cornerRadius = 4;
+    custBtn.titleLabel.font = Font_ls_size(18);
+    [custBtn setTitleColor:COLOR_HEX(titeColor, 1.0f) forState:UIControlStateNormal];
+    [custBtn setTitleColor:COLOR_HEX(titeColor, 0.6f) forState:UIControlStateHighlighted];
+    [custBtn setTitle:title forState:UIControlStateNormal];
+    [custBtn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return custBtn;
+}
+
+
+
+-(void)cancel:(UIButton *)sender {
+    NSLog(@"on cancel click");
+}
+-(void)confirm:(UIButton *)sender {
+    NSLog(@"on confirm click");
+}
 
 
 
