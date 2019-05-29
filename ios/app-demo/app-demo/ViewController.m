@@ -35,9 +35,7 @@
 -(void)tokenOnResult:(NSString* __nullable)token name: (NSString* __nullable) name{
     if ([_name.text isEqualToString: name]) {
         NSLog(@"tokenOnResult success get token :%@", token);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_tokenLabel setText: token];
-        });
+        [self->_tokenLabel setText: token];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success"
                                                                                  message:token
                                                                           preferredStyle:UIAlertControllerStyleAlert];
@@ -49,9 +47,7 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }else {
         NSLog(@"tokenOnResult error");
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_tokenLabel setText: @""];
-        });
+        [self->_tokenLabel setText: @""];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                  message:nil
                                                                           preferredStyle:UIAlertControllerStyleAlert];

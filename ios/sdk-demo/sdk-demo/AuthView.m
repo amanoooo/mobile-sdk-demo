@@ -168,7 +168,9 @@
     NSLog(@"on confirm click");
     [Api fetchDate:_name andPass: _pass andCb: ^(NSDictionary *res ){
         NSLog(@"response i: %@", res);
-        [self->_delegate tokenOnResult:[res valueForKeyPath:@"date"] name: [res valueForKeyPath:@"name"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_delegate tokenOnResult:[res valueForKeyPath:@"date"] name: [res valueForKeyPath:@"name"]];
+        });
     }];
     [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveLinear animations:^{
         CGRect rcc = self.alertView.frame;
