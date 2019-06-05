@@ -11,3 +11,15 @@ Source/Application.h
 #*.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata
+
+
+# android 
+
+*.iml
+.gradle
+.idea
+/local.properties
+android/.idea/*
+/android/build
+/android/captures
+.externalNativeBuild
