@@ -5,12 +5,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import club.amano.sdkdemo.SdkActivity;
+
 public class MainActivity extends AppCompatActivity {
 
+    private static String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        SdkActivity sdk = new SdkActivity();
+        String token = sdk.initSdk("abc", "123");
+
+        Log.d(TAG, "onCreate() returned: " + token );
     }
 
     @Override
