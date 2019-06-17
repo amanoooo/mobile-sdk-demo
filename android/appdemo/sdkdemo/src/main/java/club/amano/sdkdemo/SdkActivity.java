@@ -10,7 +10,8 @@ public class SdkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sdk);
     }
-    public String initSdk(String name, String pass) {
-        return name + pass;
+    public static void initSdk(String name, String pass, SdkCallBack sdkCallback) {
+        sdkCallback.tokenOnResult(pass, name);
+//        return name + pass;
     }
 }

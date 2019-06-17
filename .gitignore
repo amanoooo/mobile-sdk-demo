@@ -23,3 +23,7 @@ android/.idea/*
 /android/build
 /android/captures
 .externalNativeBuild
+
+
+# vscode
+.vscode
