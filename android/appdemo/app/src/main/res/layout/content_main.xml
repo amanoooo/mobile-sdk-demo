@@ -6,15 +6,101 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/valueLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="39dp"
+        android:text="not init "
+        app:layout_constraintStart_toEndOf="@+id/tokenLabel"
+        app:layout_constraintTop_toBottomOf="@+id/passText" />
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="215dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="91dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="abc"
+        app:layout_constraintStart_toEndOf="@+id/nameLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/passText"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="123"
+        app:layout_constraintStart_toEndOf="@+id/passLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="91dp"
+        android:text="name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/passLabel"
+        android:layout_width="33dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="pass:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+
+    <TextView
+        android:id="@+id/tokenLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="39dp"
+        android:text="token:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passLabel" />
+
+    <Button
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="22dp"
+        android:text="GETTOKEN1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueLabel" />
+
+    <EditText
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="89dp"
+        android:layout_marginStart="89dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Call SDK Example"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="21dp" />
 
 </android.support.constraint.ConstraintLayout>

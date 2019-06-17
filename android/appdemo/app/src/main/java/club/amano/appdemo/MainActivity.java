@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import club.amano.sdkdemo.SdkActivity;
 import club.amano.sdkdemo2.Sdk2Activity;
@@ -31,16 +32,29 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        SdkActivity sdk = new SdkActivity();
-        String token = sdk.initSdk("abc", "123");
 
-        Sdk2Activity sdk2 = new Sdk2Activity();
-        String token2 = sdk2.initSdk2("abc", "123");
 
-        Log.d(TAG, "onCreate() returned: " + token );
-        Log.d(TAG, "sdk  token: " + token );
-        Log.d(TAG, "sdk2 token: " + token2 );
+        Log.d(TAG, "onCreate" );
 
+        Button btn = (Button) findViewById(R.id.btn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.d(TAG, "onlick" );
+
+                SdkActivity sdk = new SdkActivity();
+                String token = sdk.initSdk("abc", "123");
+
+                Sdk2Activity sdk2 = new Sdk2Activity();
+                String token2 = sdk2.initSdk2("abc", "123");
+
+                Log.d(TAG, "onCreate() returned: " + token );
+                Log.d(TAG, "sdk  token: " + token );
+                Log.d(TAG, "sdk2 token: " + token2 );
+            }
+        });
     }
 
     @Override
@@ -64,4 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
