@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     tokenText.setText("HHH");
                     }
                 };
-                sdk.initSdk(name, pass, sdkCallback);
+                sdk.getToken(name, pass, MainActivity.this, sdkCallback);
 
 
             }
