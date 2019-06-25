@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        Log.d(TAG, "onCreate" );
-
         Button btn = (Button) findViewById(R.id.btn);
 
 
@@ -63,13 +60,9 @@ public class MainActivity extends AppCompatActivity {
                     public void tokenOnResult(final String token, final String name) {
                         Log.d(TAG, "tokenOnResult: token: " + token + " name : " + name);
 
-
                         uiHandler.post(new Runnable() {
                             @Override
                             public void run() {
-                                Log.d(TAG, "run: ");
-                                Toast toast=Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_LONG);
-                                toast.show();
                                 TextView tokenText = findViewById(R.id.valueLabel);
                                 tokenText.setText(token);
                             }

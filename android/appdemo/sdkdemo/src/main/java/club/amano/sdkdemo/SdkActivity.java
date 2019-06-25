@@ -43,7 +43,7 @@ public class SdkActivity extends AppCompatActivity {
             window.setContentView(R.layout.activity_sdk);//调用自定义的XML放到AlertDialog中展示
             window.setWindowAnimations(R.style.dialog_style);
             window.setLayout((ViewGroup.LayoutParams.MATCH_PARENT), ViewGroup.LayoutParams.MATCH_PARENT);
-//            window.setBackgroundDrawable(null);
+            window.setBackgroundDrawable(null);
 
             Button cancelBtn = dialog.findViewById(R.id.cancelBtn);
             Button confirmBtn= dialog.findViewById(R.id.confirmBtn);
