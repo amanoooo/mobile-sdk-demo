@@ -59,7 +59,7 @@
 
     <TextView
         android:id="@+id/passLabel"
-        android:layout_width="33dp"
+        android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"

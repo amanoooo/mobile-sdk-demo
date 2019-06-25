@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
     private static String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
+
+        uiHandler = new Handler();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Log.d(TAG, "onlick" );
-
                 EditText nameText = findViewById(R.id.nameText);
                 EditText passText = findViewById(R.id.passText);
                 String name = nameText.getText().toString();
@@ -62,16 +60,23 @@ public class MainActivity extends AppCompatActivity {
                 SdkActivity sdk = new SdkActivity();
                 SdkCallBack sdkCallback = new SdkCallBack() {
                     @Override
-                    public void tokenOnResult(String token, String name) {
-                        Toast toast=Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_LONG);
-                        toast.show();
-                    TextView tokenText = findViewById(R.id.valueLabel);
-                    tokenText.setText("HHH");
+                    public void tokenOnResult(final String token, final String name) {
+                        Log.d(TAG, "tokenOnResult: token: " + token + " name : " + name);
+
+
+                        uiHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Log.d(TAG, "run: ");
+                                Toast toast=Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_LONG);
+                                toast.show();
+                                TextView tokenText = findViewById(R.id.valueLabel);
+                                tokenText.setText(token);
+                            }
+                        });
                     }
                 };
                 sdk.getToken(name, pass, MainActivity.this, sdkCallback);
-
-
             }
         });
     }
