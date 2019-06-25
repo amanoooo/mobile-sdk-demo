@@ -8,8 +8,8 @@
 3. 原生的 sdk 体验更好
 
 ### 效果图
-![sdk-demo-ios](./resource/sdk-demo.ios.gif)
-![sdk-demo-android](./resource/sdk-demo.android.gif)
+![sdk-demo-ios](./resource/sdk-demo.ios.gif =300x500)
+![sdk-demo-android](./resource/sdk-demo.android.gif =300x500)
 
 
 ### 流程(iOS)
