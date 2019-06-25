@@ -8,7 +8,8 @@
 3. 原生的 sdk 体验更好
 
 ### 效果图
-![sdk-demo](./resource/sdk-demo.gif)
+![sdk-demo-ios](./resource/sdk-demo.ios.gif)
+![sdk-demo-android](./resource/sdk-demo.android.gif)
 
 
 ### 流程(iOS)
@@ -41,4 +42,26 @@ X-Powered-By: Express
 4. 点击取消返回 nil as token,
 
 
+### 流程(android)
+1. APP 实力话SDK
+```
+SdkActivity sdk = new SdkActivity();
+                SdkCallBack sdkCallback = new SdkCallBack() {
+                    @Override
+                    public void tokenOnResult(final String token, final String name) {
+                        Log.d(TAG, "tokenOnResult: token: " + token + " name : " + name);
 
+                        uiHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                TextView tokenText = findViewById(R.id.valueLabel);
+                                tokenText.setText(token);
+                            }
+                        });
+                    }
+                };
+                sdk.getToken(name, pass, MainActivity.this, sdkCallback);
+```
+2. SDK 模拟请求，获取token
+3. 点击确认返回 date as token,
+4. 点击取消返回 null as token,
