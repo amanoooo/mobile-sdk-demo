@@ -1,6 +1,7 @@
 
 
 ## mobile-sdk-demo
+<img alt="star" src="https://img.shields.io/github/stars/amanoooo/mobile-sdk-demo?style=social" />
 
 ### 背景
 1. 合作方公司包装 open-api 出现困难
